@@ -28,8 +28,7 @@ export class UserService {
                 correo : user.correo,
                 telefono : user.telefono
 
-            }*/
-
+            }
             /*if(this.Users[user_index].id !== undefined){
                 ID = this.Users[user_index].id
             }
@@ -53,6 +52,15 @@ export class UserService {
             return true
         }
         return false
+    }
+    /**
+     * @description fgg
+     * @param id id del usuario que queremos verificar si eiste
+     * @returns  true si el usuario no existe o false si existe
+     */
+    userExists(id : number) :boolean{
+        const index = this.Users.findIndex(user => user.id === id)
+        return index === -1
     }
 }
 
