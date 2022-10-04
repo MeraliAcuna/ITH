@@ -19,15 +19,18 @@ export class UserService {
     updateUserById(id : number, user : User) : boolean {
         let user_index = this.Users.findIndex( (user) => user.id === id )
         if(user_index !== -1 ){
-            var ID, NOMBRE, TELEFONO, EMAIL
-    
-            this.Users[user_index] = {
+            //var ID, NOMBRE, TELEFONO, EMAIL
+            const new_user = Object.assign(this.Users[user_index], user)
+            this.Users[user_index] = new_user
+           /* this.Users[user_index] = {
                 id : user.id,
                 nombre : user.nombre,
                 correo : user.correo,
                 telefono : user.telefono
-            }
-            if(this.Users[user_index].id !== undefined){
+
+            }*/
+
+            /*if(this.Users[user_index].id !== undefined){
                 ID = this.Users[user_index].id
             }
             if(this.Users[user_index].id !== undefined){
@@ -45,7 +48,7 @@ export class UserService {
                 nombre : user.nombre,
                 correo : user.correo,
                 telefono : user.telefono
-            }
+            }*/
 
             return true
         }
