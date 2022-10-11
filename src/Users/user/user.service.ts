@@ -3,6 +3,10 @@ import { Injectable } from '@nestjs/common';
 
 @Injectable()
 export class UserService {
+    constructor(@InjectRepository(UserEntity);
+    private userRepository: Repository<UserEntity>){
+        
+    }
     private readonly Users: User[] = []
 
     create( user : User ): void{
