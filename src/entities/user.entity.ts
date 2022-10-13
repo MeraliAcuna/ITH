@@ -11,8 +11,8 @@ export class User{
     @Column()
     Correo : string
 
-    @Column()
-    Telefono : string
+    @Column({default: null}) 
+    Telefono? : string
 
     
 }
