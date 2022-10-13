@@ -1,3 +1,4 @@
+
 import { Body, Controller, Get, Param, Post, Put} from '@nestjs/common';
 import { User } from 'src/models/User';
 import { UserService } from './user.service';
@@ -33,10 +34,17 @@ export class UserController {
         if(user){
             return user
         }
-        return "Usuario no encontrado"*/
+
+        return "Usuario no encontrado"
 
         //return user ? user : "No existe"
         //return user ?? "No existe" }
+
+        //return "Usuario no encontrado"
+
+        return user ? user : "No existe"
+        //return user ?? "No existe"
+    }*/
     @Put('/update/:id')
     actualizartUsuario(@Body() user : User, @Param('id') id){
         return this.userService.updateUserById(Number(id), user)

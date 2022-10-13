@@ -14,5 +14,6 @@ export class User{
     @Column()
     Telefono : string
 
-
+    
 }
+//https://docs.nestjs.com/techniques/database
