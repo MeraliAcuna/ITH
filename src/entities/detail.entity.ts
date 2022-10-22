@@ -1,13 +1,15 @@
 import { Entity, Column, PrimaryGeneratedColumn} from 'typeorm';
 
 @Entity()
-export class Sales{
+export class Details{
     @PrimaryGeneratedColumn()
     id : number;
     @Column()
-    date: Date;
+    product: string;
     @Column()
-    total: number;
+    quantity: number;
+    @Column()
+    unit_price: number;
     @Column()
     id_user: number;
 }

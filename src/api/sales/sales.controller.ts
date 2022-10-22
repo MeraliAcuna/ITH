@@ -1,11 +1,18 @@
-import { Body, Controller, Get, Param, Post, Put} from '@nestjs/common';
-import { /**/ } from "src/sales.controller";
+import { ISales } from './../../models/Sales';
+import { Body, Controller, Post } from '@nestjs/common';
+import { SalesService } from './sales.service';
+
 @Controller('sales')
-export class SalesController{
-    constructor(private salesService: SalesService){
+export class SalesController {
+    constructor( private salesService : SalesService ){
     }
-    @Post('/:id_user')
-    Create (@Body()params: ISales){
-        console.log(JSON.stringify(params))
+
+    @Post()
+    Create(@Body() params : ISales ){
+        try {
+            return this.salesService.create(params)
+        } catch (error) {
+            console.log(error)
+        }
     }
 }
