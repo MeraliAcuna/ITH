@@ -1,0 +1,11 @@
+docs.nestjs.com
+
+
+EXTENSION NODEJS 
+
+CREAR CONTROLADOR
+nest g controller api/Details
+
+INSTALAR TYPEORM
+$ npm install --save @nestjs/typeorm typeorm mysql2
+

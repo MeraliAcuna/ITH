@@ -11,5 +11,5 @@ export class Details{
     @Column()
     unit_price: number;
     @Column()
-    id_user: number;
+    id_sales: number;
 }
