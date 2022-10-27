@@ -10,6 +10,6 @@ export class Details{
     quantity: number;
     @Column()
     unit_price: number;
-    @Column()
+    @Column({default : 0})
     id_sales: number;
 }

@@ -1,4 +1,4 @@
-import { Details } from '../../models/Details';
+import { IDetails } from '../../models/Details';
 import { Details as DetailsEntity } from '../../entities/detail.entity'; 
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
@@ -12,13 +12,27 @@ export class DetailsService {
     ){ 
         
     }
-    private readonly Details: Details[] = []
+    private readonly Details: IDetails[] = []
 
-    async create( details : Details ){
-        return await this.detailsEntity.insert(details);
+    async create_details( id_sales: number, details : IDetails[] ){
+       // return await this.detailsEntity.insert(details);
+        details.forEach(element => {
+            this.detailsEntity.insert(element) //element del tipo IDetails
+
+            /*
+            this.detailsEntity.insert({
+            product: element.product,
+            unit_price: element.unit_price,
+            quantity: element.quantity,
+            id_sales: element.id_sales
+            })
+            */
+           
+        });
+        return await this.detailsEntity.insert(details)
     }
 
-    getAll() : Details[]{
+    getAll() : IDetails[]{
         return this.Details
     }
 

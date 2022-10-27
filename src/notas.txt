@@ -9,3 +9,11 @@ nest g controller api/Details
 INSTALAR TYPEORM
 $ npm install --save @nestjs/typeorm typeorm mysql2
 
+git add . 
+git commit -m "mensaje"
+
+
+git checkout -b Details
+
+
+git push origin Details
