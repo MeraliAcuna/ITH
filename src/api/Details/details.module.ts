@@ -11,3 +11,4 @@ import { DetailsService } from './details.service';
     exports: [TypeOrmModule]
 })
 export class DetailsModule {}
+//dgn
