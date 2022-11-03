@@ -17,3 +17,8 @@ git checkout -b Details
 
 
 git push origin Details
+
+
+docker-compose up
+
+npm install @nestjs/config

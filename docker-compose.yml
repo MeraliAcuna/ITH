@@ -1,0 +1,27 @@
+services:
+  app:
+    container_name: app
+    build:
+      context: .
+      target: development
+      volumnes:
+       - .:/usr/src/app
+       - /usr/src/app/node_modules
+       ports:
+       - 3001:3000
+       command: npm run start:dev
+       env_file:
+       - .env.docker
+       networks:
+       - webnet
+  db: image: mysql
+    restar: always
+    environment:
+    MYSQL_DATABASE: ${DB_NAME}
+    MYSQL_ROOT_PASSWORD: ${DB_PASSWORD}
+    ports:
+       - '${DB_PORT}:3306'
+    volumes: 
+      - my-db:/var/lib/mysql
+    networks: 
+      webnet: 
